@@ -18,73 +18,73 @@ public class Application {
         //create Customer
         
         Customer customer1 = new Customer();
-        customer1.id = 1111L;
-        customer1.city = "Long Island";
-        customer1.email = "john.wick@gmail.com";
-        customer1.firstName = "John";
-        customer1.lastName = "Wick";
-        customer1.middleInitial = "Keanu";
-        customer1.phone = 11111111L;
-        customer1.state = "New York";
-        customer1.street = "Long Island 1";
-        customer1.zip = 11111;
+        customer1.setId((Long) 1111L);
+        customer1.setCity("Long Island");
+        customer1.setEmail("john.wick@gmail.com");
+        customer1.setFirstName("John");
+        customer1.setLastName("Wick");
+        customer1.setMiddleInitial("Keanu");
+        customer1.setPhone((Long) 11111111L);
+        customer1.setState("New York");
+        customer1.setStreet("Long Island 1");
+        customer1.setZip((Integer) 11111);
         
         Customer customer2 = new Customer();
-        customer2.id = 2222L;
-        customer2.city = "Los Angeles";
-        customer2.email = "black.mamba@gmail.com";
-        customer2.firstName = "Beatrix";
-        customer2.lastName = "Kiddo";
-        customer2.middleInitial = "Uma";
-        customer2.phone = 22222222L;
-        customer2.state = "California";
-        customer2.street = "Los Angeles 1";
-        customer2.zip = 22222;
+        customer2.setId((Long) 2222L);
+        customer2.setCity("Los Angeles");
+        customer2.setEmail("black.mamba@gmail.com");
+        customer2.setFirstName("Beatrix");
+        customer2.setLastName("Kiddo");
+        customer2.setMiddleInitial("Uma");
+        customer2.setPhone((Long) 22222222L);
+        customer2.setState("California");
+        customer2.setStreet("Los Angeles 1");
+        customer2.setZip((Integer) 22222);
         
         Customer customer3 = new Customer();
-        customer3.id = 3333L;
-        customer3.city = "Tokio";
-        customer3.email = "jun.kim.com";
-        customer3.firstName = "Jun";
-        customer3.lastName = "Kim";
-        customer3.middleInitial = "Eok Seon";
-        customer3.phone = 33333333L;
-        customer3.state = "Tokio";
-        customer3.street = "Tokio 1";
-        customer3.zip = 33333;
+        customer3.setId((Long) 3333L);
+        customer3.setCity("Tokio");
+        customer3.setEmail("jun.kim.com");
+        customer3.setFirstName("Jun");
+        customer3.setLastName("Kim");
+        customer3.setMiddleInitial("Eok Seon");
+        customer3.setPhone((Long) 33333333L);
+        customer3.setState("Tokio");
+        customer3.setStreet("Tokio 1");
+        customer3.setZip((Integer) 33333);
         
         
         //create Account
         
         Account account1 = new Account();
-        account1.balance = 45000.0;
-        account1.beginBalance = 23000.0;
+        account1.setBalance((Double) 45000.0);
+        account1.setBeginBalance((Double) 23000.0);
         Timestamp timeStamp1_account = new Timestamp(System.currentTimeMillis());
-        account1.beginBalanceTimestamp = timeStamp1_account;
-        account1.creditLine = 3000.0;
-        account1.description = "Premium - Golden account";
-        account1.id = 01L;
-        account1.type = 1;
+        account1.setBeginBalanceTimestamp(timeStamp1_account);
+        account1.setCreditLine((Double) 3000.0);
+        account1.setDescription("Premium - Golden account");
+        account1.setId((Long) 01L);
+        account1.setType((Integer) 1);
         
         Account account2 = new Account();
-        account2.balance = 15000.0;
-        account2.beginBalance = 20000.0;
+        account2.setBalance((Double) 15000.0);
+        account2.setBeginBalance((Double) 20000.0);
         Timestamp timeStamp2_account = new Timestamp(System.currentTimeMillis());
-        account2.beginBalanceTimestamp = timeStamp2_account;
-        account2.creditLine = 2000.0;
-        account2.description = "Super Premium - Diamond account";
-        account2.id = 02L;
-        account2.type = 1;
+        account2.setBeginBalanceTimestamp(timeStamp2_account);
+        account2.setCreditLine((Double) 2000.0);
+        account2.setDescription("Super Premium - Diamond account");
+        account2.setId((Long) 02L);
+        account2.setType((Integer) 1);
         
         Account account3 = new Account();
-        account3.balance = 5000.0;
-        account3.beginBalance = 1000.0;
+        account3.setBalance((Double) 5000.0);
+        account3.setBeginBalance((Double) 1000.0);
         Timestamp timeStamp3_account = new Timestamp(System.currentTimeMillis());
-        account3.beginBalanceTimestamp = timeStamp3_account;
-        account3.creditLine = 1000.0;
-        account3.description = "Plain - Steel account";
-        account3.id = 03L;
-        account3.type = 2;
+        account3.setBeginBalanceTimestamp(timeStamp3_account);
+        account3.setCreditLine((Double) 1000.0);
+        account3.setDescription("Plain - Steel account");
+        account3.setId((Long) 03L);
+        account3.setType((Integer) 2);
         
         //create Movement
         
@@ -115,16 +115,16 @@ public class Application {
         //create CustomerAccount
         
         CustomerAccount customerAccount1 = new CustomerAccount();
-        customerAccount1.accounts_id =01L;
-        customerAccount1.customers_id = 1111L;
+        customerAccount1.setAccounts_id((Long) 01L);
+        customerAccount1.setCustomers_id((Long) 1111L);
         
         CustomerAccount customerAccount2 = new CustomerAccount();
-        customerAccount1.accounts_id =02L;
-        customerAccount1.customers_id = 1111L;
+        customerAccount1.setAccounts_id((Long) 02L);
+        customerAccount1.setCustomers_id((Long) 1111L);
         
         CustomerAccount customerAccount3 = new CustomerAccount();
-        customerAccount1.accounts_id =03L;
-        customerAccount1.customers_id = 3333L;
+        customerAccount1.setAccounts_id((Long) 03L);
+        customerAccount1.setCustomers_id((Long) 3333L);
         
         //create DAO
         
