@@ -115,36 +115,23 @@ public class Application {
         movement1.setTimeStamp(timeStamp3_movement); 
         
         
-        //create CustomerAccount
+        //create and connect DAO 
         
-        CustomerAccount customerAccount1 = new CustomerAccount();
-        customerAccount1.setAccounts_id((Long) 01L);
-        customerAccount1.setCustomers_id((Long) 1111L);
+        DAO dao = new DAO();  
+        dao.connectDAO();
         
-        CustomerAccount customerAccount2 = new CustomerAccount();
-        customerAccount1.setAccounts_id((Long) 02L);
-        customerAccount1.setCustomers_id((Long) 1111L);
-        
-        CustomerAccount customerAccount3 = new CustomerAccount();
-        customerAccount1.setAccounts_id((Long) 03L);
-        customerAccount1.setCustomers_id((Long) 3333L);
-        
-        //create DAO
-        
-        DAO dao = new DAO();
-        
-        //DUDAS: ¿y lo que devuelve?
         
         customer1 = dao.createCustomer(customer1);
+        CustomerAccount customerAccount1 = dao.createAccount(customer1, account1);
         //dao.createCustomer(customer2);
         //dao.createCustomer(customer3);
         //dao.findCustomer(3333L);
-        //dao.createAccount(customer3);
+        
         //dao.findCustomerAccounts(3333L);
         
+        dao.disconnectDAO();
         
-        
-        
+ 
         
     }
     
