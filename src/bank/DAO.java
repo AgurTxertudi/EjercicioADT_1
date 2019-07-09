@@ -5,7 +5,13 @@
  */
 package bank;
 
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Properties;
 
 /**
  *
@@ -13,8 +19,30 @@ import java.util.List;
  */
 public class DAO {
     
-    Customer createCustomer(Customer customer){
-        throw new UnsupportedOperationException();
+    Customer createCustomer(Customer customer) throws SQLException 
+    {
+    Connection conn = null;
+    Properties connectionProps = new Properties();
+    connectionProps.put("user", "root");
+    connectionProps.put("password", "");
+    conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bankdb", connectionProps);
+   
+    // the mysql insert statement
+      String query = " insert into customer (id)" + " values (?)";
+
+      // create the mysql insert preparedstatement
+      PreparedStatement preparedStmt = conn.prepareStatement(query);
+      preparedStmt.setLong(1, customer.getId());
+      
+
+      // execute the preparedstatement
+      preparedStmt.execute();
+      
+      conn.close();
+   
+    //throw new UnsupportedOperationException();
+    return customer;
+    
      }
     
     Customer findCustomer(Long id){

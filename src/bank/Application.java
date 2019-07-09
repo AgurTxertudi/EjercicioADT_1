@@ -5,6 +5,7 @@
  */
 package bank;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 /**
@@ -13,7 +14,7 @@ import java.sql.Timestamp;
  */
 public class Application {
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException{
         
         //create Customer
         
@@ -89,28 +90,30 @@ public class Application {
         //create Movement
         
         Movement movement1 = new Movement();
-        movement1.account_id = 01L;
-        movement1.amount = 1000.0;
-        movement1.balance = 300.0;
-        movement1.description = "Movement 1";
+        movement1.setAccount_id(01L);
+        movement1.setAmount(1000.0);
+        movement1.setBalance(300.0);
+        movement1.setDescription("Movement 1");
         Timestamp timeStamp1_movement = new Timestamp(System.currentTimeMillis());
-        movement1.timeStamp = timeStamp1_movement;
+        movement1.setTimeStamp(timeStamp1_movement);
         
+       
         Movement movement2 = new Movement();
-        movement1.account_id = 01L;
-        movement1.amount = 1100.0;
-        movement1.balance = 200.0;
-        movement1.description = "Movement 2";
+        movement1.setAccount_id(01L);
+        movement1.setAmount(1100.0);
+        movement1.setBalance(200.0);
+        movement1.setDescription("Movement 2");
         Timestamp timeStamp2_movement = new Timestamp(System.currentTimeMillis());
-        movement1.timeStamp = timeStamp2_movement;
+        movement1.setTimeStamp(timeStamp2_movement);
         
         Movement movement3 = new Movement();
-        movement1.account_id = 03L;
-        movement1.amount = 700.0;
-        movement1.balance = 100.0;
-        movement1.description = "Movement 3";
+        movement1.setAccount_id(03L);
+        movement1.setAmount(700.0);
+        movement1.setBalance(100.0);
+        movement1.setDescription("Movement 3");
         Timestamp timeStamp3_movement = new Timestamp(System.currentTimeMillis());
-        movement1.timeStamp = timeStamp3_movement;
+        movement1.setTimeStamp(timeStamp3_movement); 
+        
         
         //create CustomerAccount
         
@@ -132,12 +135,12 @@ public class Application {
         
         //DUDAS: ¿y lo que devuelve?
         
-        dao.createCustomer(customer1);
-        dao.createCustomer(customer2);
-        dao.createCustomer(customer3);
-        dao.findCustomer(3333L);
-        dao.createAccount(customer3);
-        dao.findCustomerAccounts(3333L);
+        customer1 = dao.createCustomer(customer1);
+        //dao.createCustomer(customer2);
+        //dao.createCustomer(customer3);
+        //dao.findCustomer(3333L);
+        //dao.createAccount(customer3);
+        //dao.findCustomerAccounts(3333L);
         
         
         

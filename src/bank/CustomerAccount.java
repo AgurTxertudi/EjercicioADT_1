@@ -10,7 +10,8 @@ package bank;
  * @author agurtxertudi
  */
 public class CustomerAccount {
-
+    private Long customer_id;
+    private Long account_id;
     /**
      * @return the customers_id
      */
