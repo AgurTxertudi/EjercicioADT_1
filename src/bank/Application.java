@@ -7,6 +7,8 @@ package bank;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.Vector;
+import java.util.Collection;
 
 /**
  *
@@ -90,29 +92,41 @@ public class Application {
         //create Movement
         
         Movement movement1 = new Movement();
-        movement1.setAccount_id(01L);
+        movement1.setId(10L);
         movement1.setAmount(1000.0);
         movement1.setBalance(300.0);
         movement1.setDescription("Movement 1");
         Timestamp timeStamp1_movement = new Timestamp(System.currentTimeMillis());
         movement1.setTimeStamp(timeStamp1_movement);
+        movement1.setAccount_id(01L);
         
        
         Movement movement2 = new Movement();
-        movement1.setAccount_id(01L);
+        movement1.setId(11L);
         movement1.setAmount(1100.0);
         movement1.setBalance(200.0);
         movement1.setDescription("Movement 2");
         Timestamp timeStamp2_movement = new Timestamp(System.currentTimeMillis());
         movement1.setTimeStamp(timeStamp2_movement);
+        movement1.setAccount_id(01L);
         
-        Movement movement3 = new Movement();
-        movement1.setAccount_id(03L);
+        /*Movement movement3 = new Movement();
+        movement1.setId(12L);
         movement1.setAmount(700.0);
         movement1.setBalance(100.0);
         movement1.setDescription("Movement 3");
         Timestamp timeStamp3_movement = new Timestamp(System.currentTimeMillis());
         movement1.setTimeStamp(timeStamp3_movement); 
+        movement1.setAccount_id(03L);
+        
+        Movement movement4 = new Movement();
+        movement1.setId(13L);
+        movement1.setAmount(700.0);
+        movement1.setBalance(100.0);
+        movement1.setDescription("Movement 4");
+        Timestamp timeStamp4_movement = new Timestamp(System.currentTimeMillis());
+        movement1.setTimeStamp(timeStamp4_movement); 
+        movement1.setAccount_id(03L);*/
         
         
         //create and connect DAO 
@@ -122,11 +136,32 @@ public class Application {
         
         
         customer1 = dao.createCustomer(customer1);
-        CustomerAccount customerAccount1 = dao.createAccount(customer1, account1);
+        customer2 = dao.createCustomer(customer2);
+        customer3 = dao.createCustomer(customer3);
+        
+        CustomerAccount customerAccount31 = new CustomerAccount();
+        customerAccount31 = dao.createAccount(customer3, account1);
+        
+        CustomerAccount customerAccount13 = new CustomerAccount();
+        customerAccount13 = dao.createAccount(customer1, account3);
+        //account1  = dao.createAccount(account1);
+       // CustomerAccount customerAccount1 = dao.addClientToAccount(customer1, account1);
         //dao.createCustomer(customer2);
         //dao.createCustomer(customer3);
-        //dao.findCustomer(3333L);
+        Customer customer3333L = new Customer();
+        customer3333L = dao.findCustomer(3333L);
         
+        Account account01L = new Account();
+        account01L = dao.findAccount(01L);
+        Account account03L = new Account();
+        account01L = dao.findAccount(03L);
+        
+        movement1 = dao.addMovement(movement1);
+        movement2 = dao.addMovement(movement2);
+        
+        Collection movementVector1 = new Vector();
+        movementVector1 = dao.findAccountMovements(03L);
+       
         //dao.findCustomerAccounts(3333L);
         
         dao.disconnectDAO();

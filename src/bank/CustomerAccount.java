@@ -5,11 +5,13 @@
  */
 package bank;
 
+import java.io.Serializable;
+
 /**
  *
  * @author agurtxertudi
  */
-public class CustomerAccount {
+public class CustomerAccount implements Serializable {
     private Long customers_id;
     private Long accounts_id;
     /**
