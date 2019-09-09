@@ -102,31 +102,31 @@ public class Application {
         
        
         Movement movement2 = new Movement();
-        movement1.setId(11L);
-        movement1.setAmount(1100.0);
-        movement1.setBalance(200.0);
-        movement1.setDescription("Movement 2");
+        movement2.setId(11L);
+        movement2.setAmount(1100.0);
+        movement2.setBalance(200.0);
+        movement2.setDescription("Movement 2");
         Timestamp timeStamp2_movement = new Timestamp(System.currentTimeMillis());
-        movement1.setTimeStamp(timeStamp2_movement);
-        movement1.setAccount_id(01L);
+        movement2.setTimeStamp(timeStamp2_movement);
+        movement2.setAccount_id(01L);
         
-        /*Movement movement3 = new Movement();
-        movement1.setId(12L);
-        movement1.setAmount(700.0);
-        movement1.setBalance(100.0);
-        movement1.setDescription("Movement 3");
+        Movement movement3 = new Movement();
+        movement3.setId(12L);
+        movement3.setAmount(700.0);
+        movement3.setBalance(100.0);
+        movement3.setDescription("Movement 3");
         Timestamp timeStamp3_movement = new Timestamp(System.currentTimeMillis());
-        movement1.setTimeStamp(timeStamp3_movement); 
-        movement1.setAccount_id(03L);
+        movement3.setTimeStamp(timeStamp3_movement); 
+        movement3.setAccount_id(03L);
         
         Movement movement4 = new Movement();
-        movement1.setId(13L);
-        movement1.setAmount(700.0);
-        movement1.setBalance(100.0);
-        movement1.setDescription("Movement 4");
+        movement4.setId(13L);
+        movement4.setAmount(700.0);
+        movement4.setBalance(100.0);
+        movement4.setDescription("Movement 4");
         Timestamp timeStamp4_movement = new Timestamp(System.currentTimeMillis());
-        movement1.setTimeStamp(timeStamp4_movement); 
-        movement1.setAccount_id(03L);*/
+        movement4.setTimeStamp(timeStamp4_movement); 
+        movement4.setAccount_id(03L);
         
         
         //create and connect DAO 
@@ -158,6 +158,8 @@ public class Application {
         
         movement1 = dao.addMovement(movement1);
         movement2 = dao.addMovement(movement2);
+        movement3 = dao.addMovement(movement3);
+        movement4 = dao.addMovement(movement4);
         
         Collection movementVector1 = new Vector();
         movementVector1 = dao.findAccountMovements(03L);

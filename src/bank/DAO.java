@@ -28,7 +28,7 @@ public class DAO {
     public DAO(){
     
     connectionProps = new Properties();
-    connectionProps.put("user", "rootc");
+    connectionProps.put("user", "root");
     connectionProps.put("password", "");
     }
     
@@ -352,9 +352,8 @@ public class DAO {
         
         try{
             //preparamos sentencia
-            String query1 = "SELECT * FROM account, movement "+
-                                                     "WHERE account.id ='"+id+"' "+
-                                                     "AND movement.account_id=account.id ";
+            String query1 = "SELECT * FROM movement "+
+                                                     "WHERE account_id ='"+id+"' ";
              preparedStmt = conn.prepareStatement(query1);
                
             //ejecutamos la sentencia
@@ -371,17 +370,22 @@ public class DAO {
                 movement.setDescription(new String(resulSet.getString("movement.description")));
                //no sale
                 // movement.setTimeStamp(new Timestamp(resulSet.getTimestamp("movement.timeStamp")));
+                //Show data
                 movement.setAccount_id(new Long(resulSet.getLong("movement.account_id")));
-            }
+               
                 System.out.println("Movement");
                 System.out.println("--------");
                 System.out.println("id: " + resulSet.getLong("movement.id"));
                 System.out.println("amount: " + resulSet.getDouble("movement.amount"));
                 System.out.println("balance: " + resulSet.getDouble("movement.balance"));
                 System.out.println("description " + resulSet.getString("movement.description"));
-                System.out.println("timeStamp timeStamp: " + resulSet.getTimestamp("movement.timeStamp"));
+                //System.out.println("timeStamp timeStamp: " + resulSet.getTimestamp("movement.timeStamp"));
                 System.out.println("account id: " + resulSet.getLong("movement.account_id"));
-               
+                
+                movementVector.add(movement); 
+            }
+                
+              
                 
       
         }finally{
