@@ -5,6 +5,7 @@
  */
 package bank;
 
+import exception.MyException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Vector;
@@ -16,7 +17,7 @@ import java.util.Collection;
  */
 public class Application {
     
-    public static void main(String[] args) throws SQLException{
+    public static void main(String[] args) throws SQLException, MyException, Exception{
         
         //create Customer
         
@@ -131,10 +132,9 @@ public class Application {
         
         //create and connect DAO 
         
-        DAO dao = new DAO();  
-        dao.connectDAO();
-        
-        
+        DAO dao = DAOFactory.getDAO();
+        //dao.connectDAO();
+       
         customer1 = dao.createCustomer(customer1);
         customer2 = dao.createCustomer(customer2);
         customer3 = dao.createCustomer(customer3);
@@ -166,7 +166,7 @@ public class Application {
        
         //dao.findCustomerAccounts(3333L);
         
-        dao.disconnectDAO();
+        //dao.disconnectDAO();
         
  
         
