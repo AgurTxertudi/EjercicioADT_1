@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  * @author agurtxertudi
  */
 public class DAOImplementation implements DAO{
-    private     Connection conn;
+    //private     Connection conn;
     private     Properties connectionProps;
     private     ConexionPoolBasico   poolBD;
     private     ResourceBundle  configFile;
@@ -268,7 +268,7 @@ public class DAOImplementation implements DAO{
       String query2 = " insert into customer_account (customers_id, accounts_id)" + " values (?, ?)";
 
       // create the mysql insert preparedstatement
-      preparedStmt = conn.prepareStatement(query2);
+      preparedStmt = this.conexionBD.prepareStatement(query2);
       preparedStmt.setLong(1, customer.getId());
       preparedStmt.setLong(2, account.getId());
       
