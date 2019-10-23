@@ -5,13 +5,14 @@
  */
 package bank;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  *
  * @author agurtxertudi
  */
-public class Movement {
+public class Movement implements Serializable {
     
     private Long id;
     private Double amount;
@@ -20,13 +21,31 @@ public class Movement {
     private Timestamp timeStamp;
     private Long account_id;
     
-    public Long getId()
-    {
-        return id;
+    public Movement(){
+        
     }
     
-    public void setId(Long id)
+    public Movement(Long id, Double amount, Double balance, String description, Timestamp timeStamp, Long account_id)
     {
+        this.id = id;
+        this.amount = amount;
+        this.balance = balance;
+        this.description = description;
+        this.timeStamp = timeStamp;
+        this.account_id = account_id;
+    }
+    
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -99,5 +118,5 @@ public class Movement {
     public void setAccount_id(Long account_id) {
         this.account_id = account_id;
     }
-   
+    
 }

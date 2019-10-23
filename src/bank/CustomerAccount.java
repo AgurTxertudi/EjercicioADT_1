@@ -5,15 +5,19 @@
  */
 package bank;
 
+import java.io.Serializable;
+
 /**
  *
  * @author agurtxertudi
  */
-public class CustomerAccount {
-
+public class CustomerAccount implements Serializable {
+    private Long customers_id;
+    private Long accounts_id;
     /**
      * @return the customers_id
      */
+    
     public Long getCustomers_id() {
         return customers_id;
     }
@@ -38,7 +42,5 @@ public class CustomerAccount {
     public void setAccounts_id(Long accounts_id) {
         this.accounts_id = accounts_id;
     }
-    private Long customers_id;
-    private Long accounts_id;
     
 }

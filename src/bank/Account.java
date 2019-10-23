@@ -5,6 +5,7 @@
  */
 package bank;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 
@@ -16,7 +17,7 @@ import java.sql.Timestamp;
  *
  * @author agurtxertudi
  */
-public class Account {
+public class Account implements Serializable {
     private Long id;
     private Double balance;
     private Double beginBalance;

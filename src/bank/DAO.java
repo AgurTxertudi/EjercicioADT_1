@@ -5,47 +5,30 @@
  */
 package bank;
 
+import exception.MyException;
+import java.sql.SQLException;
+import java.util.Collection;
 import java.util.List;
 
 /**
  *
  * @author agurtxertudi
  */
-public class DAO {
-    
-    Customer createCustomer(Customer customer){
-        throw new UnsupportedOperationException();
-     }
-    
-    Customer findCustomer(Long id){
-         throw new UnsupportedOperationException();
-     }
-    
-     List<Account> findCustomerAccounts(Long id){
-        throw new UnsupportedOperationException();
-     }
-     
-     // En este método devolvería Account y CustomerAccount
-     
-    CustomerAccount  createAccount (Customer customer){
-        throw new UnsupportedOperationException();
-    }
-    
-    CustomerAccount addClientToAccount (Long customers_id, Long accounts_id){
-        throw new UnsupportedOperationException();
-    }
-    
-     Account findAccount(Long id){
-         throw new UnsupportedOperationException();
-     }
-     
-     Movement addMovement(Long id){
-          throw new UnsupportedOperationException();
-     }
-     
-     List<Movement> findAccountMovements(Long id){
-        throw new UnsupportedOperationException();
-     }
+public interface DAO {
 
+    
+    Movement addMovement(Movement movement) throws Exception;
    
+    CustomerAccount createAccount(Customer customer, Account account) throws Exception;
+
+    Customer createCustomer(Customer customer) throws Exception;
+    
+    Account findAccount(Long id) throws Exception;
+
+    Collection<Movement> findAccountMovements(Long id) throws Exception;
+
+    Customer findCustomer(Long id) throws Exception;
+
+    List<Account> findCustomerAccounts(Long id);
+    
 }

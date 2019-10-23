@@ -5,11 +5,24 @@
  */
 package bank;
 
+import java.io.Serializable;
+
 /**
  *
  * @author agurtxertudi
  */
-public class Customer {
+public class Customer implements Serializable {
+    
+    private Long id;
+    private String city;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String middleInitial;
+    private Long phone;
+    private String state;
+    private String street;
+    private Integer zip;
 
     /**
      * @return the id
@@ -17,7 +30,7 @@ public class Customer {
     public Long getId() {
         return id;
     }
-
+   
     /**
      * @param id the id to set
      */
@@ -151,16 +164,6 @@ public class Customer {
         this.zip = zip;
     }
     
-    private Long id;
-    private String city;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String middleInitial;
-    private Long phone;
-    private String state;
-    private String street;
-    private Integer zip;
     
     
 }
